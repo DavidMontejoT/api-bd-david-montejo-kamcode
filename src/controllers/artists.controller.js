@@ -1,6 +1,9 @@
 import { Artist } from "../models/artists.model.js";
 import { Song } from "../models/songs.model.js";
 
+
+
+
 export const getArtists  = async (req,res) =>  {
     try {
         

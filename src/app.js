@@ -1,12 +1,19 @@
-import express from "express"; 
-import artistRoutes from './routes/artist.routes.js'
-import songsRoutes from './routes/songs.routes.js'
+// Importa las dependencias
+import express from "express";
+import cors from 'cors';
+import artistRoutes from './routes/artist.routes.js';
+import songsRoutes from './routes/songs.routes.js';
 
+// Inicializa la aplicación de Express
 const app = express();
-//middlewares
+
+// Usa middlewares
+app.use(cors()); // Ahora puedes usar cors después de inicializar `app`
 app.use(express.json());
-app.use(songsRoutes)
 
+// Rutas
+app.use(songsRoutes);
+app.use(artistRoutes);
 
-app.use(artistRoutes)
+// Exporta la aplicación
 export default app;
